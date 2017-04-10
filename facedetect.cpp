@@ -5,6 +5,7 @@
 #include <opencv2/core.hpp>
 #include <opencv2/objdetect.hpp>
 #include <opencv2/highgui.hpp>
+#include <opencv2/imgproc.hpp>
 
 using namespace std;
 
@@ -31,12 +32,18 @@ int main(int argc, char** argv) {
 	
 	// load the input image from file
 	cv::Mat img = loadImage(input_name);
+
+	// convert image to grayscale
+	cv::Mat img_gray;
+	cv::cvtColor(img, img_gray, cv::COLOR_BGR2GRAY);
+	cv::imshow("Grayscale Image", img_gray);
 	
 	// end program
 	cv::waitKey(0);
 	cout << endl;
 	return 0;
 }
+
 
 cv::CascadeClassifier loadClassifier(string filename) {
 	cv::CascadeClassifier cascade;
