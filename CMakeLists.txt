@@ -1,2 +1,6 @@
-cmake_minimum_required( 2.8 )
-
+cmake_minimum_required( VERSION 2.8 )
+project( rishav )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( FaceDetect facedetect.cpp )
+target_link_libraries( FaceDetect ${OpenCV_LIBS} )
