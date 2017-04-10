@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
 	// convert image to grayscale
 	cv::Mat img_gray;
 	cv::cvtColor(img, img_gray, cv::COLOR_BGR2GRAY);
-	cv::imshow("Grayscale Image", img_gray);
+	// cv::imshow("Grayscale Image", img_gray);
 			
 	// detect faces in image
 	vector<cv::Rect> faces;
@@ -95,7 +95,7 @@ cv::Mat loadImage(string filename) {
 	}
 	
 	cout << "Image loaded from file: " << filename << endl;
-	cv::imshow("Input Image", img);
+	// cv::imshow("Input Image", img);
 	
 	return img;
 }
